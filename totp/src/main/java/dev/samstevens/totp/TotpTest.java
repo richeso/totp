@@ -18,12 +18,12 @@ public class TotpTest {
     public static void main(String[] args) throws Exception {
 
         SecretGenerator secretGenerator = new DefaultSecretGenerator(64);
-        String secret = secretGenerator.generate();
-        //secret = "4ECL72PO6YYV7RUVS2ZCMLWISEJ5VZ4C";
+        //String secret = secretGenerator.generate();
+        String secret = "4ECL72PO6YYV7RUVS2ZCMLWISEJ5VZ4C";
         System.out.println("Secret is: "+secret);
 
         //CodeGenerator codeGenerator = new DefaultCodeGenerator();
-        CodeGenerator codeGenerator = new DefaultCodeGenerator(HashingAlgorithm.SHA512,10);
+        CodeGenerator codeGenerator = new DefaultCodeGenerator(HashingAlgorithm.SHA1,6);
         TimeProvider timeProvider = new SystemTimeProvider();
         //TimeProvider timeProvider = new NtpTimeProvider("pool.ntp.org",5000);
         DefaultCodeVerifier verifier = new DefaultCodeVerifier(codeGenerator, timeProvider);
